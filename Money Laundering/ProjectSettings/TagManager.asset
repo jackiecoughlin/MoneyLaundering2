@@ -3,12 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ground
+  - coin
+  - GameHandler
+  - jumpStop
+  - Truck
+  - CopCar
+  - CarKiller
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - background
   - Water
   - UI
   - 
@@ -40,4 +47,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 3093596125
+    locked: 0
+  - name: player
+    uniqueID: 3816739451
     locked: 0
