@@ -11,6 +11,7 @@ TagManager:
   - Truck
   - CopCar
   - CarKiller
+  - jumpStop2
   layers:
   - Default
   - TransparentFX

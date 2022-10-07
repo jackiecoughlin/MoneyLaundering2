@@ -12,7 +12,7 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene("SampleScene");
+        playAgain();
 
     }
 
@@ -29,10 +29,22 @@ public class GameHandler : MonoBehaviour
 
     public void AddScore(int points){
       playerScore += points;
+
     }
 
 
     public int getScore(){
       return playerScore;
     }
+
+
+    public void ZeroOut(){
+      playerScore = 0;
+    }
+
+    public void playAgain(){
+      
+      SceneManager.LoadScene("SampleScene");
+    }
+
 }

@@ -10,6 +10,9 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed;
     public float jumpSpeed;
     public Vector2 movement;
+    public GameObject truck1;
+    public GameObject truck2;
+    public GameObject platform;
     public GameHandler gameHandlerObj;
     public float coinSpawnTime;
     private bool isJumping;
@@ -25,6 +28,10 @@ public class PlayerMove : MonoBehaviour
           gameHandlerObj =
           GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         }
+    }
+
+    void Awake(){
+      GameHandler.Instance.ZeroOut();
     }
 
 
@@ -43,13 +50,19 @@ public class PlayerMove : MonoBehaviour
       if(other.gameObject.tag == "ground" || other.gameObject.tag == "Truck"){
         isJumping = false;
       }
+
     }
 
     void OnTriggerEnter2D(Collider2D other){
       if (other.tag == "jumpStop"){
-        GameObject.FindWithTag("Truck").GetComponent<Collider2D>().enabled
-                                                                  = false;
+        truck1.GetComponent<Collider2D>().enabled = false;
+        truck2.GetComponent<Collider2D>().enabled = false;
       }
+
+      if (other.tag == "jumpStop2"){
+        platform.GetComponent<Collider2D>().enabled = false;
+      }
+
       if(other.tag == "coin"){
         StartCoroutine(CoinPause(other));
 
@@ -61,8 +74,12 @@ public class PlayerMove : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other){
       if (other.tag == "jumpStop"){
-        GameObject.FindWithTag("Truck").GetComponent<Collider2D>().enabled
-                                                                  = true;
+        truck1.GetComponent<Collider2D>().enabled = true;
+        truck2.GetComponent<Collider2D>().enabled = true;
+      }
+
+      if (other.tag == "jumpStop2"){
+        platform.GetComponent<Collider2D>().enabled = true;
       }
     }
 
