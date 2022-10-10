@@ -43,7 +43,6 @@ public class GameHandler : MonoBehaviour
     }
 
     public void playAgain(){
-      
       SceneManager.LoadScene("SampleScene");
     }
 

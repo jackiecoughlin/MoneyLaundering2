@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Central Park.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: b81278f834ec245ffb6095ca20c93426
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 7ed5d5eb304b74e0c87e10f7f71c6684
   m_configObjects: {}

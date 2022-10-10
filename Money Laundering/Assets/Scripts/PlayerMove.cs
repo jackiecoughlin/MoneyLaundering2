@@ -30,9 +30,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    void Awake(){
-      GameHandler.Instance.ZeroOut();
-    }
+
 
 
 
@@ -64,7 +62,7 @@ public class PlayerMove : MonoBehaviour
       }
 
       if(other.tag == "coin"){
-        StartCoroutine(CoinPause(other));
+        CoinPause(other);
 
       }
       if(other.tag == "CopCar"){
@@ -85,10 +83,8 @@ public class PlayerMove : MonoBehaviour
 
 
 
-    IEnumerator CoinPause(Collider2D other){
-      other.gameObject.SetActive(false);
+    void CoinPause(Collider2D other){
+      Destroy(other.gameObject);
       gameHandlerObj.AddScore(1);
-      yield return new WaitForSeconds(coinSpawnTime);
-      other.gameObject.SetActive(true);
     }
 }
